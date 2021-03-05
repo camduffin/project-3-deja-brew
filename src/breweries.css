@@ -1,0 +1,11 @@
+li {
+    background-color: #202020;
+    width: 25%;
+    height: 150px;
+    margin: 50px;
+    color: white;
+    list-style-type: none;
+    border-radius: 5px;
+    padding: 4px 20px 70px 20px;
+}
+
