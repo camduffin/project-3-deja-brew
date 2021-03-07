@@ -1,14 +1,33 @@
 import './breweries.css';
+import { FaGlobe } from 'react-icons/fa';
+import { FaPhone } from 'react-icons/fa';
 
-function Breweries() {
+// const handleClick = (event) => {
+//     document.getElementsByClassName('phone').value = {props.phone};
+// }
+function Breweries(props) {
     return(
-            <ul>
-                <li>
-                    <h2>Brewery</h2>
-                    <p>123 Brewery Street</p>
-                    <p>www.brewery.com</p>
-                </li>
-            </ul>
+        
+        <li>
+            <h2>{props.name}</h2>
+            <p>{props.address}</p>
+            <nav className="brewery-nav">
+                <a href={props.website}>
+                    {
+                        props.website ? <FaGlobe className="globe"/>
+                        : null
+                    }
+                </a>
+                <i>
+                    {
+                        props.phone ? <FaPhone className="phone"/> 
+                        : null
+                    }
+                </i>
+            </nav>
+        </li>
+
+
     )
 }
 

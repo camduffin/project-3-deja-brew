@@ -3,11 +3,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
 
 .App {
-
+  width: 100%;
+  margin: 0 auto;
 }
 
 body {
-  /* background-color: #282c34; */
   background-color: #121212;
   color: #282c34;
   font-family: 'Cabin', sans-serif;
@@ -31,7 +31,7 @@ h1 {
   padding: 10px;
 }
 
-nav {
+.juno {
   margin: 20px 60px 0;
   font-size: 14px;
 }
@@ -47,7 +47,7 @@ svg {
   margin: 0 30px;
 }
 
-a {
+.juno-link {
   margin: 0 5px;
   text-decoration: none;
   color: #282c34;
@@ -75,19 +75,31 @@ button {
   width: 70%;
   font-size: 18px;
   padding: 8px;
-  background-color: #484a4f;
+  background-color: #2d2e32;
   color: white;
   opacity: .7;
   font-family: 'Cabin', sans-serif;
+  transition-duration: 0.3s;
+}
+
+button:hover {
+  background-color: transparent;
+  transform: scale(1.04);
+  transition: all .4s ease-in-out;
 }
 
 input[type="text"] {
   width: 70%;
   padding: 10px;
-  background-color: #484a4f;
+  background-color: #2d2e32;
   color: white;
   font-size: 18px;
   font-family: 'Cabin', sans-serif;
+  transition: all .4s ease-in-out;
+}
+
+input[type="text"]:hover {
+  transform: scale(1.04);
 }
 
 input[type="text"]::placeholder {
@@ -95,15 +107,22 @@ input[type="text"]::placeholder {
   font-family: 'Cabin', sans-serif;
 }
 
-li {
-  font-size: 20px;
+.results-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+ul {
+  margin: 0 auto;
+  padding: 0;
+  animation: fadeIn ease-in-out 6s;
 }
+
+/* @keyframes fadeIn {
+  0% {opacity:0;}
+  100% {opacity:1;}
+  } */
+
+
