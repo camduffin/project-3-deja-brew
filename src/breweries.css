@@ -13,7 +13,7 @@ li {
     justify-content: space-between;
     transition: all .2s ease-in-out;
     animation: fadeIn ease-in 0.7s;
-    opacity: .7;
+    opacity: .8;
 }
 
 @keyframes fadeIn {
@@ -43,19 +43,40 @@ p {
     padding: 20px;
 }
 
+.globe, .phone, .maps {
+    height: 2rem;
+    padding-right: 20px;
+}
 
 .globe {
-    width: 1.5rem;
+    width: 1.4rem;
     margin: 0;
     color: #93329e;
+    transition-duration: 0.3s;
 }
 
 .globe:hover {
-    transform: scale(1.3);
+    transform: scale(1.2);
 }
 
 .phone {
-    width: 1.5rem;
+    width: 1.4rem;
     color: #d3155e;
+    transition-duration: 0.3s;
 }
+
+.phone:hover {
+    transform: scale(1.2);
+}
+
+.maps {
+    width: 1.6rem;
+    color: teal;
+    transition-duration: 0.3s;
+}
+
+.maps:hover {
+    transform: scale(1.2);
+}
+
 

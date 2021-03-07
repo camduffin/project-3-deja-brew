@@ -4,13 +4,8 @@ import Breweries from './Breweries.js';
 import './App.css';
 import { useState } from 'react';
 
-// your app wants user interaction and so you will 
-
-// have a submit event 
-// Your API call can live in a function and that function is called when the user clicks search button 
-
 function App() {
-// initialize a state for the 
+
   const [brewery, setBrewery] = useState([]);
 
   function getBreweries(userInput) {
@@ -27,7 +22,7 @@ function App() {
       const breweryData = response.data;
       console.log(breweryData);
 
-      // infinite loop on page load
+    
       setBrewery(breweryData);
     })
   }
@@ -45,7 +40,7 @@ function App() {
       <header>
         <div className="heading-container">
           <div className="beer-logo">
-            <FaBeer />
+            <FaBeer className="logo"/>
           </div>
           <h1>Déjà Brew</h1>
         </div>
@@ -55,7 +50,7 @@ function App() {
       </header>
 
       <form action="" onSubmit={handleSubmit}>
-        <input type="text" id="brewery-search" placeholder="Search for breweries by city..."/>
+        <input type="text" id="brewery-search" placeholder="Search for breweries by city..." required/>
 
         <label htmlFor="brewery-search"></label>
         <button>Search</button>
@@ -70,6 +65,8 @@ function App() {
               address={location.street}
               website={location.website_url}
               phone={location.phone}
+              latitude={location.latitude}
+              longitude={location.longitude}
               />
             )
           })

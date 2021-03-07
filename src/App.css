@@ -41,9 +41,9 @@ span {
   margin-top: 5px;
 }
 
-svg {
-  height: 5em;
-  width: 3em;
+.logo {
+  height: 5rem;
+  width: 3rem;
   margin: 0 30px;
 }
 
@@ -114,15 +114,10 @@ input[type="text"]::placeholder {
   flex-wrap: wrap;
 }
 
+/* stripping defaul styles */
 ul {
   margin: 0 auto;
   padding: 0;
-  animation: fadeIn ease-in-out 6s;
+  margin: 50px;
 }
-
-/* @keyframes fadeIn {
-  0% {opacity:0;}
-  100% {opacity:1;}
-  } */
-
 
