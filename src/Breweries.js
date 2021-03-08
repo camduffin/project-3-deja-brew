@@ -1,18 +1,23 @@
 import './breweries.css';
 import { FaGlobe } from 'react-icons/fa';
 import { FaPhone } from 'react-icons/fa';
+import axios from 'axios';
+
 // import { FaMapMarkerAlt } from 'react-icons/fa';
 import { SiGooglemaps } from "react-icons/si";
 
-// const handleClick = (event) => {
-//     document.getElementsByClassName('phone').value = {props.phone};
-// }
 function Breweries(props) {
 
     const lat = props.latitude;
     const long = props.longitude;
-    const id = props.key;
+    // const id = props.key;
+
+    const handleDirections = (lat, long) => {
+        const url = `https://www.google.com/maps/dir/?api=1&destination=${lat},${long}`;
+        window.open(url, '_blank');
+    }
     return(
+
         
         <li>
             <h2>{props.name}</h2>
@@ -30,7 +35,7 @@ function Breweries(props) {
                         : null
                     }
                 </i>
-                <a href='https://www.google.com/maps/search/?api=1&query={lat},{long}&query_place_id={id}'><SiGooglemaps className="maps"/></a>
+                <button className="maps-button" onClick={() => handleDirections(lat, long)}><SiGooglemaps className="maps"/></button>
             </nav>
         </li>
     )

@@ -79,4 +79,11 @@ p {
     transform: scale(1.2);
 }
 
+.maps-button {
+    border: none;
+    background-color: transparent;
+    padding: 0;
+}
+
+
 

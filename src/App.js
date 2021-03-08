@@ -11,18 +11,16 @@ function App() {
   function getBreweries(userInput) {
     axios({
       method: 'GET',
-      url: 'https://api.openbrewerydb.org/breweries',
+      url: `https://api.openbrewerydb.org/breweries/search`,
       dataResponse: 'JSON',
       params: {
-        by_city: userInput,
+        query: userInput,
         format: 'json',
-        // by_name: userInput
       }
     }).then(response => {
       const breweryData = response.data;
       console.log(breweryData);
 
-    
       setBrewery(breweryData);
     })
   }
@@ -50,10 +48,10 @@ function App() {
       </header>
 
       <form action="" onSubmit={handleSubmit}>
-        <input type="text" id="brewery-search" placeholder="Search for breweries by city..." required/>
+        <input type="text" id="brewery-search" placeholder="Search for breweries by keyword or city..." required/>
 
         <label htmlFor="brewery-search"></label>
-        <button>Search</button>
+        <button className="search-button">Search</button>
       </form> 
 
       <ul className='results-wrapper'>

@@ -67,11 +67,11 @@ form {
   justify-content: space-between;
 }
 
-button, input[type="text"] {
+.search-button, input[type="text"] {
   display: block;
 }
 
-button {
+.search-button {
   width: 70%;
   font-size: 18px;
   padding: 8px;
@@ -82,7 +82,7 @@ button {
   transition-duration: 0.3s;
 }
 
-button:hover {
+.search-button:hover {
   background-color: transparent;
   transform: scale(1.04);
   transition: all .4s ease-in-out;
