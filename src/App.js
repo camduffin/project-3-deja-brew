@@ -3,6 +3,7 @@ import axios from 'axios';
 import Breweries from './Breweries.js';
 import './App.css';
 import { useState } from 'react';
+import Video from './video/video.mp4';
 
 function App() {
 
@@ -25,16 +26,24 @@ function App() {
     })
   }
 
-  
   const handleSubmit = (event) => {
     event.preventDefault();
+
     const userInput = event.target[0].value;
     getBreweries(userInput);
+
+
     document.getElementById("brewery-search").value = "";
+
+    const resultView = document.getElementById('results');
+    resultView.scrollIntoView({behavior: "smooth"});
   }
 
   return (
     <div className="App">
+      <video autoPlay loop muted>
+        <source src={Video} type="video/mp4"/>
+      </video>
       <header>
         <div className="heading-container">
           <div className="beer-logo">
@@ -43,18 +52,19 @@ function App() {
           <h1>Déjà Brew</h1>
         </div>
         <nav className="juno">
-          <p>Created at<a href="https://junocollege.com/" target="_blank" rel="noreferrer noopener" className="juno-link">Juno College</a><span>by Cam Duffin</span></p>
+          <p>Created at<a href="https://junocollege.com/" target="_blank" rel="noreferrer noopener" className="juno-link">Juno College</a></p>
         </nav>
       </header>
 
-      <form action="" onSubmit={handleSubmit}>
-        <input type="text" id="brewery-search" placeholder="Search for breweries by keyword or city..." required/>
+      <div className="form-container">
+        <form action="" onSubmit={handleSubmit}>
+          <input type="text" id="brewery-search" placeholder="Search for breweries by keyword or city..."/>
+          <label htmlFor="brewery-search" className="sr-only"></label>
+          <button className="search-button">Search</button>
+        </form> 
+      </div>
 
-        <label htmlFor="brewery-search"></label>
-        <button className="search-button">Search</button>
-      </form> 
-
-      <ul className='results-wrapper'>
+      <ul className='results-wrapper' id="results">
         {
           brewery.map((location) => {
             return( <Breweries 
@@ -65,6 +75,8 @@ function App() {
               phone={location.phone}
               latitude={location.latitude}
               longitude={location.longitude}
+              city={location.city}
+              state={location.state}
               />
             )
           })

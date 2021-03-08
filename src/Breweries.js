@@ -1,16 +1,12 @@
 import './breweries.css';
 import { FaGlobe } from 'react-icons/fa';
 import { FaPhone } from 'react-icons/fa';
-import axios from 'axios';
-
-// import { FaMapMarkerAlt } from 'react-icons/fa';
 import { SiGooglemaps } from "react-icons/si";
 
 function Breweries(props) {
 
     const lat = props.latitude;
     const long = props.longitude;
-    // const id = props.key;
 
     const handleDirections = (lat, long) => {
         const url = `https://www.google.com/maps/dir/?api=1&destination=${lat},${long}`;
@@ -18,12 +14,18 @@ function Breweries(props) {
     }
     return(
 
-        
         <li>
-            <h2>{props.name}</h2>
+            <h2>
+                    {
+                        props.name === 'brewery in planning' ?
+                        null
+                        : props.name
+                    }
+            </h2>
             <p>{props.address}</p>
+            <p>{props.city}, {props.state}</p>
             <nav className="brewery-nav">
-                <a href={props.website} target="_blank" rel="noopener">
+                <a href={props.website} target="_blank" rel="noreferrer noopener">
                     {
                         props.website ? <FaGlobe className="globe"/>
                         : null
@@ -35,7 +37,12 @@ function Breweries(props) {
                         : null
                     }
                 </i>
-                <button className="maps-button" onClick={() => handleDirections(lat, long)}><SiGooglemaps className="maps"/></button>
+                <button className="maps-button" onClick={() => handleDirections(lat, long)}>
+                    {
+                        props.latitude ? <SiGooglemaps className="maps"/> 
+                        : null
+                    }
+                </button>
             </nav>
         </li>
     )
