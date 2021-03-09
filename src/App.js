@@ -5,6 +5,7 @@ import './App.css';
 import { useState } from 'react';
 import Video from './video/video.mp4';
 
+
 function App() {
 
   const [brewery, setBrewery] = useState([]);
@@ -65,25 +66,27 @@ function App() {
       </div>
 
       <ul className='results-wrapper' id="results">
-        {
-          brewery.map((location) => {
-            return( <Breweries 
-              key={location.id}
-              name={location.name}
-              address={location.street}
-              website={location.website_url}
-              phone={location.phone}
-              latitude={location.latitude}
-              longitude={location.longitude}
-              city={location.city}
-              state={location.state}
-              />
-            )
-          })
-        }
-      </ul>
-    </div>
-  );
-}
+        { 
+        brewery.map((location) => {
+              return( <Breweries 
+                key={location.id}
+                name={location.name}
+                address={location.street}
+                website={location.website_url}
+                phone={location.phone}
+                latitude={location.latitude}
+                longitude={location.longitude}
+                city={location.city}
+                state={location.state}
+                type={location.brewery_type}
+                />
+              )
+            })
+          }
+        </ul>
+      </div>
+    );
+  }
+  
+  export default App;
 
-export default App;

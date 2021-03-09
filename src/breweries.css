@@ -51,7 +51,8 @@ p {
 .globe {
     width: 1.4rem;
     margin: 0;
-    color: #93329e;
+    /* color: #93329e; */
+    color: #d3155e;
     transition-duration: 0.3s;
 }
 
@@ -79,11 +80,12 @@ p {
     transform: scale(1.2);
 }
 
-.maps-button {
+.maps-button, .phone-button {
     border: none;
     background-color: transparent;
     padding: 0;
 }
 
-
-
+.address {
+    margin-top: 0;
+}
