@@ -3,7 +3,6 @@ li {
     width: 20%;
     height: 240px;
     margin: 20px;
-    margin-top: 100px;
     color: white;
     list-style-type: none;
     border-radius: 5px;
@@ -74,6 +73,7 @@ p {
     width: 1.6rem;
     color: teal;
     transition-duration: 0.3s;
+    cursor: ne-resize;
 }
 
 .maps:hover {
@@ -89,3 +89,25 @@ p {
 .address {
     margin-top: 0;
 }
+
+@media (max-width: 996px) {
+
+    li {
+        justify-content: space-around;
+    }
+}
+
+@media (max-width: 843px) {
+    
+    li {
+        width: 40%;
+    }
+}
+
+@media (max-width: 599px) {
+    
+    li {
+        width: 70%;
+    }
+}
+

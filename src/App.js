@@ -4,6 +4,8 @@ import Breweries from './Breweries.js';
 import './App.css';
 import { useState } from 'react';
 import Video from './video/video.mp4';
+// import { MdKeyboardArrowDown } from 'react-icons/md';
+import { BsChevronDoubleDown } from 'react-icons/bs';
 
 
 function App() {
@@ -22,6 +24,7 @@ function App() {
     }).then(response => {
       const breweryData = response.data;
       console.log(breweryData);
+      
 
       setBrewery(breweryData);
     })
@@ -37,14 +40,24 @@ function App() {
     document.getElementById("brewery-search").value = "";
 
     const resultView = document.getElementById('results');
-    resultView.scrollIntoView({behavior: "smooth"});
+    resultView.scrollIntoView({behavior: 'smooth'});
+
+    const arrow = document.getElementById('arrow');
+    arrow.classList.add('arrow');
+  
+  }
+
+  const handleButton = () => {
+    const resultView = document.getElementById('results');
+    resultView.scrollIntoView({behavior: 'smooth'});
   }
 
   return (
+
     <div className="App">
-      <video autoPlay loop muted>
-        <source src={Video} type="video/mp4"/>
-      </video>
+        <video autoPlay loop muted>
+          <source src={Video} type="video/mp4"/>
+        </video>
       <header>
         <div className="heading-container">
           <div className="beer-logo">
@@ -59,13 +72,18 @@ function App() {
 
       <div className="form-container">
         <form action="" onSubmit={handleSubmit}>
-          <input type="text" id="brewery-search" placeholder="Search for breweries by keyword or city..."/>
+          <input type="text" id="brewery-search" placeholder="Search for breweries by keyword or city..." required />
           <label htmlFor="brewery-search" className="sr-only"></label>
           <button className="search-button">Search</button>
         </form> 
       </div>
 
+      <div className="arrow-container">
+        <BsChevronDoubleDown id="arrow" onClick={handleButton}/>
+      </div>
+
       <ul className='results-wrapper' id="results">
+
         { 
         brewery.map((location) => {
               return( <Breweries 

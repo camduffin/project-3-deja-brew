@@ -15,7 +15,7 @@ function Breweries(props) {
         }
         
         return(
-
+            
             props.type === 'planning' 
             ? null 
             : 
@@ -51,7 +51,7 @@ function Breweries(props) {
                     </button>
                 </nav>
             </li>
-    )
+)
 }
 
 export default Breweries;
