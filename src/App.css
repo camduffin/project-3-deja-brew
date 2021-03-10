@@ -234,7 +234,6 @@ ul {
   color: #121212;
 }
 
-
 /* Media Queries */
 
 /* tablets and small laptops */
@@ -295,6 +294,10 @@ ul {
     justify-content: flex-start;
     width: 100%;
     margin: 0;
+  }
+
+  input[type="text"] {
+    background: rgba(0, 0, 0, 0.7);
   }
   
   form {
