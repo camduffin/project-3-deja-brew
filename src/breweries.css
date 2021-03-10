@@ -1,7 +1,7 @@
 li {
     background-color: #202020;
     width: 20%;
-    height: 240px;
+    height: 280px;
     margin: 20px;
     color: white;
     list-style-type: none;
@@ -39,7 +39,7 @@ p {
     align-items: center;
     width: 90%;
     height: 10px;
-    padding: 20px;
+    padding: 30px;
 }
 
 .globe, .phone, .maps {
@@ -48,7 +48,7 @@ p {
 }
 
 .globe {
-    width: 1.4rem;
+    width: 2.7rem;
     margin: 0;
     /* color: #93329e; */
     color: #d3155e;
@@ -60,7 +60,7 @@ p {
 }
 
 .phone {
-    width: 1.4rem;
+    width: 2.7rem;
     color: #d3155e;
     transition-duration: 0.3s;
 }
@@ -70,7 +70,7 @@ p {
 }
 
 .maps {
-    width: 1.6rem;
+    width: 3rem;
     color: teal;
     transition-duration: 0.3s;
     cursor: ne-resize;
@@ -90,6 +90,10 @@ p {
     margin-top: 0;
 }
 
+/* Media Queries */
+
+/* tablets and small laptops */
+
 @media (max-width: 996px) {
 
     li {
@@ -97,12 +101,16 @@ p {
     }
 }
 
+/* tablets */
+
 @media (max-width: 843px) {
     
     li {
         width: 40%;
     }
 }
+
+/* tablets and phones */
 
 @media (max-width: 599px) {
     

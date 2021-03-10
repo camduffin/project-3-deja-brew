@@ -4,9 +4,7 @@ import Breweries from './Breweries.js';
 import './App.css';
 import { useState } from 'react';
 import Video from './video/video.mp4';
-// import { MdKeyboardArrowDown } from 'react-icons/md';
 import { BsChevronDoubleDown } from 'react-icons/bs';
-
 
 function App() {
 
@@ -24,18 +22,21 @@ function App() {
     }).then(response => {
       const breweryData = response.data;
       console.log(breweryData);
-      
 
-      setBrewery(breweryData);
+      breweryData.length === 0 ?
+      alert('Sorry! No breweries found.') : setBrewery(breweryData);
+    }).catch((err) => {
+      alert('Sorry! No breweries found.')
     })
   }
+
+  // event handler functions
 
   const handleSubmit = (event) => {
     event.preventDefault();
 
     const userInput = event.target[0].value;
     getBreweries(userInput);
-
 
     document.getElementById("brewery-search").value = "";
 
@@ -51,6 +52,8 @@ function App() {
     const resultView = document.getElementById('results');
     resultView.scrollIntoView({behavior: 'smooth'});
   }
+
+  // JSX return
 
   return (
 
@@ -101,10 +104,12 @@ function App() {
               )
             })
           }
-        </ul>
-      </div>
-    );
-  }
+
+      </ul>
+          {/* App div ends here */}
+    </div> 
+  );
+}
   
-  export default App;
+export default App;
 
