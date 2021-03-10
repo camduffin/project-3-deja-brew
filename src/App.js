@@ -21,7 +21,6 @@ function App() {
       }
     }).then(response => {
       const breweryData = response.data;
-      console.log(breweryData);
 
       breweryData.length === 0 ?
       alert('Sorry! No breweries found.') : setBrewery(breweryData);
